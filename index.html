@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tes Kepribadian MBTI - Santai</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Oleo+Script:wght@400;700&family=Poetsen+One&display=swap" rel="stylesheet">
+    <style>
+       .poetsen-one-regular {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+       .question-container { display: none; }
+        .question-container.active { display: block; }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-indigo-300 to-blue-300 min-h-screen flex flex-col items-center justify-center">
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+    <div class="flex items-center h-16 px-4 sm:px-6 lg:px-8 justify-start gap-6">
+
+      <!-- Logo on Far Left -->
+       <div class="flex-shrink-0 md:fixed items-start  mb-1">
+        <img src="et.png" alt="Logo" class="h-16" />
+      </div>
+
+      <!-- Desktop Menu Items -->
+      <div class="mx-auto flex">
+        <ul class="hidden sm:flex sm:text-sm md:text-base gap-6 md:gap-10 lg:gap-16 font-serif">
+        <li><a href="homepage.html" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">HOME</a></li>
+        <li><a href="about.html" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">ABOUT</a></li>
+        <li><a href="#footer" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">CONTACT US</a></li>
+      </ul>
+      </div>
+      <img class="size-10 hidden sm:flex" src="flag.png">
+
+      <!-- Hamburger Icon (Mobile) -->
+      <div class="sm:hidden ml-auto relative z-50">
+        <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+          <svg id="hamburger-icon" class="w-8 h-8 block" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="close-icon" class="w-8 h-8 hidden" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="sm:hidden hidden  flex-col gap-4 px-4 pb-4 bg-white text-center font-serif text-base space-y-4">
+      <a href="homepage.html" class="block p-2 rounded hover:bg-indigo-400 hover:text-white transition">HOME</a>
+      <a href="about.html" class="block p-2 rounded hover:bg-indigo-400 hover:text-white transition">ABOUT</a>
+      <a href="#footer" class="block p-2 rounded hover:bg-indigo-400 hover:text-white transition">CONTACT US</a>
+    </div>
+    
+  </nav>
+  <!-- Toggle Script -->
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+      const isClickInside = toggleBtn.contains(e.target) || mobileMenu.contains(e.target);
+      if (!isClickInside && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+  </script>  
+  <div class="bg-slate-50 mt-20 mb-8 ml-4 mr-4 rounded-lg shadow-lg p-8 max-w-xl sm:w-3/4 md:w-3/4 lg:w-3/4 w-full"><!-- Lebar diubah jadi 3/4 saat layar SM -->
+       <img src="ikon.png" class="mb-8 h-40 mx-auto">
+        <form id="mbtiForm" class="space-y-6 font-serif">
+
+            <!-- Halaman 1: Kolom Nama + Soal 1-5 -->
+            <div class="question-container active" data-page="1">
+                <div>
+                    <label for="nama" class="block text-gray-700 text-base font-serif font-bold mb-2">Hai , Nama Kamu Siapa?</label>
+                    <input type="text" id="nama" name="nama"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        placeholder="Tulis Nama Kamu Disini" required>
+                </div>
+
+                <!-- Soal 1-5 (dengan border) -->
+                <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">1. Kalau lagi di tongkrongan , kamu biasanya ngapain?:</p>
+                    <label class="block"><input type="radio" name="q1" value="E1" required> Ngobrol sama semua orang</label>
+                    <label class="block"><input type="radio" name="q1" value="I1"> Diem aja, dengerin yang lain</label>
+                    <label class="block"><input type="radio" name="q1" value="X1"> Kadang ngobrol, kadang diem</label>
+                    <label class="block"><input type="radio" name="q1" value="Y1"> Gak suka tongkrongan</label>
+                </div>
+                <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">2. Soal kerjaan atau tugas , kamu lebih seneng apa?:</p>
+                    <label class="block"><input type="radio" name="q2" value="T1" required> Mikir logika, analisis dulu</label>
+                    <label class="block"><input type="radio" name="q2" value="F1"> Ikutin kata hati, yang penting nyaman</label>
+                    <label class="block"><input type="radio" name="q2" value="X2"> Dua-duanya penting sih</label>
+                    <label class="block"><input type="radio" name="q2" value="Y2"> Gak suka kerjaan/tugas</label>
+                </div>
+                <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">3. Kalau dikasih info , kamu lebih tertarik sama apa?:</p>
+                    <label class="block"><input type="radio" name="q3" value="S1" required> Fakta yang jelas, data yang pasti</label>
+                    <label class="block"><input type="radio" name="q3" value="N1"> Ide-ide baru, kemungkinan di masa depan</label>
+                    <label class="block"><input type="radio" name="q3" value="X3"> Dua-duanya menarik</label>
+                    <label class="block"><input type="radio" name="q3" value="Y3"> Gak butuh info</label>
+                </div>
+                <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">4. Ketika ngejalanin sesuatu , kamu lebih milih?:</p>
+                    <label class="block"><input type="radio" name="q4" value="J1" required> Terencana rapi dari awal</label>
+                    <label class="block"><input type="radio" name="q4" value="P1"> Spontan aja, ikutin alur</label>
+                    <label class="block"><input type="radio" name="q4" value="X4"> Tergantung situasinya</label>
+                    <label class="block"><input type="radio" name="q4" value="Y4"> Gak suka ngejalanin apa-apa</label>
+                </div>
+                <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">5. Kalau lagi sama temen-temen , kamu itu gimana?:</p>
+                    <label class="block"><input type="radio" name="q5" value="E2" required> Rame banget, selalu bikin suasana</label>
+                    <label class="block"><input type="radio" name="q5" value="I2"> Lebih suka dengerin aja</label>
+                    <label class="block"><input type="radio" name="q5" value="X5"> Kadang rame, kadang kalem</label>
+                    <label class="block"><input type="radio" name="q5" value="Y5"> Gak punya temen</label>
+                </div>
+            </div>
+
+            <!-- Halaman 2: Soal 6-10 -->
+            <div class="question-container" data-page="2">
+                <!-- Soal 6-10 (dengan border) -->
+                <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">6. Kalau ada masalah yang bikin pusing , apa yang akan kamu lakukan?:</p>
+                    <label class="block"><input type="radio" name="q6" value="F2" required> Curhat ke temen, biar lega</label>
+                    <label class="block"><input type="radio" name="q6" value="T2"> Cari solusi yang logis, gak pake baper</label>
+                    <label class="block"><input type="radio" name="q6" value="X6"> Dua-duanya dilakuin</label>
+                    <label class="block"><input type="radio" name="q6" value="Y6"> Gak peduli sama masalah</label>
+                </div>
+                <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">7. Buat kamu , info yang paling penting itu?:</p>
+                    <label class="block"><input type="radio" name="q7" value="N2" required> Gambaran besarnya, tujuannya ke mana</label>
+                    <label class="block"><input type="radio" name="q7" value="S2"> Detailnya, biar gak ada yang kelewat</label>
+                    <label class="block"><input type="radio" name="q7" value="X7"> Dua-duanya sama penting</label>
+                    <label class="block"><input type="radio" name="q7" value="Y7"> Gak penting info apapun</label>
+                </div>
+                 <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">8. Dalam mengerjakan sesuatu , kamu lebih suka gimana?:</p>
+                    <label class="block"><input type="radio" name="q8" value="P2" required> Fleksibel aja, gak mau ribet</label>
+                    <label class="block"><input type="radio" name="q8" value="J2"> Terstruktur, jelas step-stepnya</label>
+                    <label class="block"><input type="radio" name="q8" value="X8"> Tergantung mood</label>
+                    <label class="block"><input type="radio" name="q8" value="Y8"> Gak suka ngerjain apa-apa</label>
+                </div>
+                 <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">9. Kalau lagi di tempat yang rame banget , kamu bakalan ngerasa apa?:</p>
+                    <label class="block"><input type="radio" name="q9" value="E3" required> Makin semangat, energinya nambah</label>
+                    <label class="block"><input type="radio" name="q9" value="I3"> Pengen cepet-cepet pulang</label>
+                    <label class="block"><input type="radio" name="q9" value="X9"> Tergantung acaranya</label>
+                    <label class="block"><input type="radio" name="q9" value="Y9"> Gak pernah ke tempat rame</label>
+                </div>
+                 <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">10. Apa yang kamu pikirkan ketika sedang mengambil keputusan?:</p>
+                    <label class="block"><input type="radio" name="q10" value="T3" required> Harus logis, biar gak salah</label>
+                    <label class="block"><input type="radio" name="q10" value="F3"> Ikutin kata hati aja, feeling itu penting</label>
+                    <label class="block"><input type="radio" name="q10" value="X10"> Dua-duanya dipertimbangin</label>
+                    <label class="block"><input type="radio" name="q10" value="Y10"> Susah banget, gak bisa mutusin</label>
+                </div>
+            </div>
+
+            <!-- Halaman 3: Soal 11-15 -->
+            <div class="question-container" data-page="3">
+                <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">11. Liburan idaman kamu itu yang kayak gimana?</p>
+                    <label class="block"><input type="radio" name="q11" value="E4" required> Bareng temen-temen, seru-seruan</label>
+                    <label class="block"><input type="radio" name="q11" value="I4"> Sendirian, tenang dan damai</label>
+                    <label class="block"><input type="radio" name="q11" value="X11"> Tergantung mood pengennya apa</label>
+                    <label class="block"><input type="radio" name="q11" value="Y11"> Gak pernah liburan</label>
+                </div>
+                 <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">12. Kamu kalau lagi belajar sesuatu yang baru bakalan gimana?:</p>
+                    <label class="block"><input type="radio" name="q12" value="J3" required> Step by step, ikutin panduan</label>
+                    <label class="block"><input type="radio" name="q12" value="P3"> Coba-coba sendiri, eksperimen</label>
+                    <label class="block"><input type="radio" name="q12" value="X12"> Dua-duanya dicoba</label>
+                    <label class="block"><input type="radio" name="q12" value="Y12"> Males belajar</label>
+                </div>
+                 <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">13. Manakah yang lebih penting untuk kamu?:</p>
+                    <label class="block"><input type="radio" name="q13" value="S3" required> Hasil yang nyata, bisa diliat</label>
+                    <label class="block"><input type="radio" name="q13" value="N3"> Teori yang mendalam, konsep yang kuat</label>
+                    <label class="block"><input type="radio" name="q13" value="X13"> Dua-duanya penting</label>
+                    <label class="block"><input type="radio" name="q13" value="Y13"> Gak penting dua-duanya</label>
+                </div>
+                 <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">14. Kalau dikasih tugas mendadak , apa yang akan kamu lakukan?:</p>
+                    <label class="block"><input type="radio" name="q14" value="T4" required> Langsung bikin rencana, biar cepet selesai</label>
+                    <label class="block"><input type="radio" name="q14" value="F4"> Kerjain sebisanya, yang penting selesai</label>
+                    <label class="block"><input type="radio" name="q14" value="X14"> Tergantung tugasnya</label>
+                    <label class="block"><input type="radio" name="q14" value="Y14"> Kabur, gak mau ngerjain</label>
+                </div>
+                 <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">15. Dalam hubungan pertemanan , kamu pengennya:</p>
+                    <label class="block"><input type="radio" name="q15" value="E5" required> Sering ketemu, ngobrolin banyak hal</label>
+                    <label class="block"><input type="radio" name="q15" value="I5"> Gak harus sering, yang penting nyambung</label>
+                    <label class="block"><input type="radio" name="q15" value="X15"> Dua-duanya oke</label>
+                    <label class="block"><input type="radio" name="q15" value="Y15"> Gak butuh temen</label>
+                </div>
+            </div>
+
+            <!-- Halaman 4: Soal 16-20 -->
+            <div class="question-container" data-page="4">
+                 <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">16. Hal yang bikin kamu semangat itu apa?</p>
+                    <label class="block"><input type="radio" name="q16" value="J4" required> Kalau semua berjalan sesuai rencana</label>
+                    <label class="block"><input type="radio" name="q16" value="P4"> Kejutan yang tak terduga dan seru</label>
+                    <label class="block"><input type="radio" name="q16" value="X16"> Tergantung situasinya</label>
+                    <label class="block"><input type="radio" name="q16" value="Y16"> Gak ada yang bikin semangat</label>
+                </div>
+                 <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">17. Kalau lagi ngobrol , kamu lebih suka gimana?:</p>
+                    <label class="block"><input type="radio" name="q17" value="N4" required> Bahas ide-ide gila yang out of the box</label>
+                    <label class="block"><input type="radio" name="q17" value="S4"> Ngobrolin kejadian sehari-hari</label>
+                    <label class="block"><input type="radio" name="q17" value="X17"> Tergantung topiknya</label>
+                    <label class="block"><input type="radio" name="q17" value="Y17"> Gak suka ngobrol</label>
+                </div>
+                 <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">18.Manakah perlakuan orang lain yamg membuat kamu nyaman?:</p>
+                    <label class="block"><input type="radio" name="q18" value="F5" required> Memperhatikan perasaan kamu</label>
+                    <label class="block"><input type="radio" name="q18" value="T5"> Berdebat dengan logika yang kuat</label>
+                    <label class="block"><input type="radio" name="q18" value="X18"> Tergantung orangnya</label>
+                    <label class="block"><input type="radio" name="q18" value="Y18"> Gak peduli sama orang lain</label>
+                </div>
+                 <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">19. Apa hal yang paling kamu hindari?:</p>
+                    <label class="block"><input type="radio" name="q19" value="E6" required> Sendirian terlalu lama</label>
+                    <label class="block"><input type="radio" name="q19" value="I6"> Keramaian yang bikin bising</label>
+                    <label class="block"><input type="radio" name="q19" value="X19"> Tergantung situasinya</label>
+                    <label class="block"><input type="radio" name="q19" value="Y19"> Gak ada yang dihindari</label>
+                </div>
+                 <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">20. Kalau ngerjain sesuatu , apa yang lebih kamu prioritasin?:</p>
+                    <label class="block"><input type="radio" name="q20" value="J5" required> Prosesnya, biar hasilnya maksimal</label>
+                    <label class="block"><input type="radio" name="q20" value="P5"> Hasilnya, yang penting cepet selesai</label>
+                    <label class="block"><input type="radio" name="q20" value="X20"> Tergantung apa yang dikerjain</label>
+                    <label class="block"><input type="radio" name="q20" value="Y20"> Gak pernah fokus</label>
+                </div>
+            </div>
+               <!-- Halaman 5: Soal 21-25 -->
+               <div class="question-container" data-page="5">
+                 <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">21. Saat ada proyek , kamu lebih suka gimana?:</p>
+                    <label class="block"><input type="radio" name="q21" value="J6" required> Menyusun rencana rinci dan detail</label>
+                    <label class="block"><input type="radio" name="q21" value="P6"> Mengalir saja dan menyesuaikan diri</label>
+                    <label class="block"><input type="radio" name="q21" value="X21"> Tergantung jenis proyeknya</label>
+                    <label class="block"><input type="radio" name="q21" value="Y21"> Tidak tertarik dengan proyek</label>
+                </div>
+                 <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">22. Kamu lebih menikmati kegiatan yang gimana?:</p>
+                    <label class="block"><input type="radio" name="q22" value="N5" required> Menantang imajinasi dan kreativitas</label>
+                    <label class="block"><input type="radio" name="q22" value="S5"> Praktis dan memberikan hasil yang jelas</label>
+                    <label class="block"><input type="radio" name="q22" value="X22"> Keduanya sama-sama menarik</label>
+                    <label class="block"><input type="radio" name="q22" value="Y22"> Tidak menikmati kegiatan apa pun</label>
+                </div>
+                 <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">23. Saat berinteraksi dengan orang lain ,bagaimana sikap yang kamu cenderung perlihatkan?:</p>
+                    <label class="block"><input type="radio" name="q23" value="F6" required> Empati dan merasakan apa yang mereka rasakan</label>
+                    <label class="block"><input type="radio" name="q23" value="T6"> Logis dan fokus pada fakta yang ada</label>
+                    <label class="block"><input type="radio" name="q23" value="X23"> Tergantung situasinya</label>
+                    <label class="block"><input type="radio" name="q23" value="Y23"> Menghindari interaksi dengan orang lain</label>
+                </div>
+                 <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">24. Di waktu senggang , kamu lebih suka apa?:</p>
+                    <label class="block"><input type="radio" name="q24" value="E7" required> Bersosialisasi dan bertemu banyak orang</label>
+                    <label class="block"><input type="radio" name="q24" value="I7"> Menyendiri dan melakukan hobi pribadi</label>
+                    <label class="block"><input type="radio" name="q24" value="X24"> Tergantung suasana hati</label>
+                    <label class="block"><input type="radio" name="q24" value="Y24"> Tidak melakukan apa pun</label>
+                </div>
+                 <div class="border p-4 rounded-md mt-4">
+                    <p class="font-medium mb-2">25. Dalam membuat keputusan , kamu lebih percaya pada apa?:</p>
+                    <label class="block"><input type="radio" name="q25" value="J7" required> Analisis yang mendalam dan terstruktur</label>
+                    <label class="block"><input type="radio" name="q25" value="P7"> Intuisi dan insting yang kuat</label>
+                    <label class="block"><input type="radio" name="q25" value="X25"> Tergantung situasinya</label>
+                    <label class="block"><input type="radio" name="q25" value="Y25"> Tidak membuat keputusan</label>
+                </div>
+            </div>
+
+            <div class="flex justify-between mt-6">
+                <button type="button" id="prevBtn"
+                    class="py-2 px-4 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 hover:scale-110 transition duration-300" disabled>Back</button>
+                <button type="button" id="nextBtn"
+                    class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 font-semibold hover:scale-110 transition duration-300">Next</button>
+            </div>
+            <button type="submit" id="submitBtn"
+                class="hidden w-full py-2 px-4 bg-indigo-400 text-white rounded-full hover:bg-indigo-500 hover:scale-110 transition duration-300 font-semibold mt-4">Liat Hasil</button>
+        </form>
+
+        <div id="result" class="hidden mt-8 text-center">
+            <h2 id="greeting" class="text-xl font-bold mb-2"></h2>
+            <p id="mbtiType" class="text-2xl font-semibold mb-4"></p>
+            <a id="mbtiLink" href="#"
+                class="inline-block mt-2 px-4 py-2 bg-indigo-400 hover:bg-indigo-500 text-white rounded-full hover:scale-110 transition duration-300 font-serif">Yuk Liat Penjelasan Tipe Kamu</a>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('mbtiForm');
+        const resultDiv = document.getElementById('result');
+        const mbtiTypeP = document.getElementById('mbtiType');
+        const mbtiLink = document.getElementById('mbtiLink');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        const questionContainers = document.querySelectorAll('.question-container');
+        const greeting = document.getElementById('greeting');
+        let currentPage = 1;
+        const totalPages = 5; // Update total pages
+
+        function showPage(n) {
+            questionContainers.forEach(container => container.classList.remove('active'));
+            document.querySelector(`[data-page="${n}"]`).classList.add('active');
+            prevBtn.disabled = n === 1;
+            nextBtn.classList.toggle('hidden', n === totalPages);
+            submitBtn.classList.toggle('hidden', n !== totalPages);
+        }
+
+        showPage(currentPage);
+
+        nextBtn.addEventListener('click', function () {
+            if (currentPage < totalPages) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        });
+
+        prevBtn.addEventListener('click', function () {
+            if (currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+            }
+        });
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let E = 0, I = 0, S = 0, N = 0, T = 0, F = 0, J = 0, P = 0;
+            const formData = new FormData(form);
+
+            for (let [key, value] of formData.entries()) {
+                if (key === 'nama') continue;
+                if (value.startsWith('E')) E++;
+                else if (value.startsWith('I')) I++;
+                else if (value.startsWith('S')) S++;
+                else if (value.startsWith('N')) N++;
+                if (value.startsWith('T')) T++;
+                else if (value.startsWith('F')) F++;
+                 if (value.startsWith('J')) J++;
+                else if (value.startsWith('P')) P++;
+            }
+
+            const EI = E >= I ? 'E' : 'I';
+            const SN = S >= N ? 'S' : 'N';
+            const TF = T >= F ? 'T' : 'F';
+            const JP = J >= P ? 'J' : 'P';
+            const mbti = EI + SN + TF + JP;
+
+            mbtiTypeP.textContent = mbti;
+            mbtiLink.href = mbti.toLowerCase() + '.html';
+
+            // Nama dengan huruf pertama uppercase
+            let nama = formData.get('nama') || '';
+            nama = nama.charAt(0).toUpperCase() + nama.slice(1);
+
+            greeting.textContent = `Hello ${nama} , Hasil Tes Kamu Adalah:`;
+
+            form.classList.add('hidden');
+            resultDiv.classList.remove('hidden');
+        });
+    </script>
+   <footer class=" w-screen h-auto pl-4 pr-4 pt-2  bg-white">
+    <p class="text-2xl sm:text-3xl text-black text-center poetsen-one-regular mt-4">ERWAN PERSONAL WEBSITE</p>
+    <a href="about.html"><p class="text-black flex gap-2 font-light mt-4 cursor-pointer"><img class="h-7 w-7" src="user.png">About Me</p></a>
+    <p id="footer" class="text-black font-semibold mt-5 mb-1">Contact Me On</p>
+    <div class="flex gap-4 ">
+    <div class="space-y-2">
+    <a href="https://www.instagram.com/erwann.?igsh=Y3R4dXc0dzNrempk"><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="ig.png">erwann_7</p></a>
+    <a><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="fb.png">Stephen Curry</p></a>
+    </div>
+    <div class="space-y-2">
+    <a><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="mail.png">erwan11@gmail.com</p></a>
+    <a><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="wa,png">+628111111</p></a>
+    </div>
+    </div>
+    <p class="text-black font-semibold mt-2">Operation Time</p>
+<p class="text-black font-thin flex gap-2 mt-1"><img class="h-7 w-7" src="jam.png">Everyday</p>
+    <p class="text-black font-semibold">Location</p>
+    <p class=" font-thin mt-1 flex gap-2 items-center cursor-pointer text-sm sm:text-base md:text-lg lg:text-lg text-justify text-black"><img class="h-7 w-7" src="lokasi.png">Dihatimu</p>
+    <p class="text-center mt-8 pb-8 poetsen-one-regular">JUST FOR PRACTICE AND FUN</p>
+</footer>
+</body>
+</html>

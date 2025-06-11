@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Kepribadian ESTP - Sang Penggerak</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Oleo+Script:wght@400;700&family=Poetsen+One&display=swap" rel="stylesheet">
+    <style>
+       .poetsen-one-regular {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #f0fdf4, #fef9c3);
+        }
+        .estp-gradient {
+            background: linear-gradient(135deg, #fbbf24 0%, #16a34a 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .star-rating {
+            color: #fbbf24;
+            margin-right: 2px;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-yellow-300 to bg-green-200 font-serif">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+    <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+    <div class="flex items-center h-16 px-4 sm:px-6 lg:px-8 justify-start gap-6 md:mx-auto">
+
+      <!-- Logo on Far Left -->
+      <div class="flex-shrink-0 md:fixed items-start  mb-1">
+        <img src="et.png" alt="Logo" class="h-16" />
+      </div>
+
+      <!-- Desktop Menu Items -->
+      <div class="mx-auto flex">
+        <ul class="hidden sm:flex sm:text-sm md:text-base gap-6 md:gap-6 lg:gap-16 font-serif md:ml-20 lg:ml-0">
+        <li><a href="homepage.html" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">HOME</a></li>
+        <li><a href="about.html" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">ABOUT</a></li>
+        <li><a href="#footer" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">CONTACT US</a></li>
+      </ul>
+      </div>
+
+      <!-- Hamburger Icon (Mobile) -->
+      <div class="sm:hidden ml-auto relative z-50">
+        <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+          <svg id="hamburger-icon" class="w-8 h-8 block" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="close-icon" class="w-8 h-8 hidden" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="sm:hidden hidden  flex-col gap-4 px-4 pb-4 bg-white text-center font-serif text-base space-y-4">
+      <a href="homepage.html" class="block p-2 rounded hover:bg-indigo-400 hover:text-white transition">HOME</a>
+      <a href="about.html" class="block p-2 rounded hover:bg-indigo-400 hover:text-white transition">ABOUT</a>
+      <a href="#footer" class="block p-2 rounded hover:bg-indigo-400 hover:text-white transition">CONTACT US</a>
+    </div>
+  </nav>
+  <!-- Toggle Script -->
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+      const isClickInside = toggleBtn.contains(e.target) || mobileMenu.contains(e.target);
+      if (!isClickInside && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+  </script>
+        <!-- Header -->
+        <header class="estp-gradient text-white rounded-xl p-6 mb-8 mt-14 shadow-lg">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">Tipe Kepribadian ESTP</h1>
+            <h2 class="text-2xl md:text-3xl font-semibold text-yellow-200">Sang Penggerak</h2>
+            <div class="flex justify-center space-x-4 mt-4 text-yellow-300">
+                <span>Extrovert</span>
+                <span>•</span>
+                <span>Sensing</span>
+                <span>•</span>
+                <span>Thinking</span>
+                <span>•</span>
+                <span>Perceiving</span>
+            </div>
+        </header>
+
+        <!-- Intro Section -->
+        <section class="mb-12 bg-white rounded-xl p-6 shadow-md ">
+            <p class="text-lg mb-4">
+                ESTP adalah tipe kepribadian yang <span class="font-semibold text-green-700">enerjik, praktis, dan spontan</span>. Mereka mencakup sekitar <span class="font-bold">4-5% dari populasi</span>. ESTP dikenal sebagai pengambil tindakan yang berani, suka tantangan, dan mampu berpikir cepat dalam situasi apapun.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+                <div class="bg-green-50 p-4 rounded-lg text-center">
+                    <i class="fas fa-bolt text-green-600 text-2xl mb-2"></i>
+                    <h3 class="font-bold">Spontan</h3>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg text-center">
+                    <i class="fas fa-running text-green-600 text-2xl mb-2"></i>
+                    <h3 class="font-bold">Aktif</h3>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg text-center">
+                    <i class="fas fa-eye text-green-600 text-2xl mb-2"></i>
+                    <h3 class="font-bold">Observan</h3>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg text-center">
+                    <i class="fas fa-handshake text-green-600 text-2xl mb-2"></i>
+                    <h3 class="font-bold">Persuasif</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ciri-Ciri Utama -->
+        <section class="mb-12 bg-white rounded-xl p-6 shadow-md ">
+            <h2 class="text-2xl font-bold text-green-800 mb-4 border-b-2 border-green-200 pb-2">Ciri-Ciri Utama ESTP</h2>
+            <ul class="space-y-3">
+                <li class="flex items-start">
+                    <span class="text-green-500 mr-2 mt-1">✓</span>
+                    <span><span class="font-semibold">Berorientasi pada Aksi</span> - Lebih suka bertindak daripada berpikir terlalu lama</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-green-500 mr-2 mt-1">✓</span>
+                    <span><span class="font-semibold">Percaya Diri</span> - Mampu menghadapi tantangan dengan tenang</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-green-500 mr-2 mt-1">✓</span>
+                    <span><span class="font-semibold">Suka Risiko</span> - Tidak takut mencoba hal baru atau mengambil keputusan cepat</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-green-500 mr-2 mt-1">✓</span>
+                    <span><span class="font-semibold">Komunikatif</span> - Mudah bergaul dan pandai membujuk orang lain</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-green-500 mr-2 mt-1">✓</span>
+                    <span><span class="font-semibold">Praktis</span> - Fokus pada solusi nyata dan langsung</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Kelebihan dan Kelemahan -->
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+            <!-- Kelebihan -->
+            <section class="bg-white rounded-xl p-6 shadow-md ">
+                <h2 class="text-2xl font-bold text-green-700 mb-4 border-b-2 border-green-200 pb-2">Kelebihan ESTP</h2>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Adaptif</span> - Cepat menyesuaikan diri dengan situasi baru</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Berpikir Cepat</span> - Mengambil keputusan dengan sigap</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Solutif</span> - Mampu menyelesaikan masalah secara langsung</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Percaya Diri</span> - Tidak mudah ragu dalam bertindak</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Komunikatif</span> - Pandai bernegosiasi dan membangun relasi</span>
+                    </li>
+                </ul>
+            </section>
+            <!-- Kelemahan -->
+            <section class="bg-white rounded-xl p-6 shadow-md ">
+                <h2 class="text-2xl font-bold text-red-700 mb-4 border-b-2 border-red-200 pb-2">Kelemahan ESTP</h2>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <span class="text-red-500 mr-2 mt-1">✗</span>
+                        <span><span class="font-semibold">Kurang Sabar</span> - Tidak suka menunggu atau proses yang lambat</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 mr-2 mt-1">✗</span>
+                        <span><span class="font-semibold">Impulsif</span> - Kadang bertindak tanpa memikirkan konsekuensi</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 mr-2 mt-1">✗</span>
+                        <span><span class="font-semibold">Kurang Fokus Jangka Panjang</span> - Lebih tertarik pada hasil instan</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 mr-2 mt-1">✗</span>
+                        <span><span class="font-semibold">Kurang Sensitif</span> - Kadang tidak peka terhadap perasaan orang lain</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 mr-2 mt-1">✗</span>
+                        <span><span class="font-semibold">Mudah Bosan</span> - Membutuhkan variasi dan tantangan terus-menerus</span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Karier -->
+        <section class="mb-12 bg-white rounded-xl p-6 shadow-md ">
+            <h2 class="text-2xl font-bold text-green-800 mb-4 border-b-2 border-green-200 pb-2">ESTP dalam Karier</h2>
+            <p class="mb-4">
+                ESTP berkembang dalam pekerjaan yang <span class="font-semibold">dinamis, penuh aksi, dan membutuhkan interaksi langsung</span>. Mereka unggul di bidang yang menuntut pengambilan keputusan cepat dan keterampilan komunikasi.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                <div class="bg-green-100 p-3 rounded-lg flex items-center">
+                    <i class="fas fa-briefcase text-green-600 mr-3"></i>
+                    <span>Pengusaha</span>
+                </div>
+                <div class="bg-green-100 p-3 rounded-lg flex items-center">
+                    <i class="fas fa-bullhorn text-green-600 mr-3"></i>
+                    <span>Pemasaran & Penjualan</span>
+                </div>
+                <div class="bg-green-100 p-3 rounded-lg flex items-center">
+                    <i class="fas fa-gavel text-green-600 mr-3"></i>
+                    <span>Pengacara</span>
+                </div>
+                <div class="bg-green-100 p-3 rounded-lg flex items-center">
+                    <i class="fas fa-ambulance text-green-600 mr-3"></i>
+                    <span>Paramedis</span>
+                </div>
+                <div class="bg-green-100 p-3 rounded-lg flex items-center">
+                    <i class="fas fa-trophy text-green-600 mr-3"></i>
+                    <span>Atlet</span>
+                </div>
+                <div class="bg-green-100 p-3 rounded-lg flex items-center">
+                    <i class="fas fa-cogs text-green-600 mr-3"></i>
+                    <span>Teknisi</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hubungan -->
+        <section class="mb-12 bg-white rounded-xl p-6 shadow-md ">
+            <h2 class="text-2xl font-bold text-green-800 mb-4 border-b-2 border-green-200 pb-2">ESTP dalam Hubungan</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-lime-50 p-4 rounded-lg">
+                    <div class="text-lime-600 text-2xl mb-2">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Hubungan Romantis</h3>
+                    <p>Menunjukkan kasih sayang lewat tindakan nyata dan petualangan bersama, bukan kata-kata.</p>
+                    <div class="mt-3 flex">
+                        <span class="star-rating">★★★★☆</span>
+                    </div>
+                </div>
+                <div class="bg-yellow-50 p-4 rounded-lg">
+                    <div class="text-yellow-600 text-2xl mb-2">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Gaya Pengasuhan</h3>
+                    <p>Mendorong anak untuk mandiri, aktif, dan berani mencoba hal baru.</p>
+                    <div class="mt-3 flex">
+                        <span class="star-rating">★★★★☆</span>
+                    </div>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <div class="text-green-600 text-2xl mb-2">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Pertemanan</h3>
+                    <p>Menyukai pertemanan yang seru, penuh aktivitas, dan spontanitas.</p>
+                    <div class="mt-3 flex">
+                        <span class="star-rating">★★★★★</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kecocokan dengan Zodiak -->
+        <section class="mb-12 bg-white rounded-xl p-6 shadow-md ">
+            <h2 class="text-2xl font-bold text-green-800 mb-4 border-b-2 border-green-200 pb-2">Kecocokan dengan Zodiak</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-orange-50 p-4 rounded-lg">
+                    <div class="text-orange-600 text-2xl mb-2">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Zodiak Api (Aries, Leo, Sagitarius)</h3>
+                    <p class="text-sm">Kecocokan tinggi berkat energi dan semangat petualangan yang sama.</p>
+                    <div class="mt-2 text-orange-700">
+                        <span class="font-semibold">Kecocokan: 90%</span>
+                    </div>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <div class="text-blue-600 text-2xl mb-2">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Zodiak Air (Cancer, Scorpio, Pisces)</h3>
+                    <p class="text-sm">Perlu usaha ekstra untuk memahami sisi emosional zodiak air.</p>
+                    <div class="mt-2 text-blue-700">
+                        <span class="font-semibold">Kecocokan: 60%</span>
+                    </div>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <div class="text-green-600 text-2xl mb-2">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Zodiak Bumi (Taurus, Virgo, Capricorn)</h3>
+                    <p class="text-sm">Bisa saling melengkapi, namun perbedaan gaya hidup kadang jadi tantangan.</p>
+                    <div class="mt-2 text-green-700">
+                        <span class="font-semibold">Kecocokan: 70%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tokoh Terkenal -->
+        <section class="mb-12 bg-white rounded-xl p-6 shadow-md ">
+            <h2 class="text-2xl font-bold text-green-800 mb-4 border-b-2 border-green-200 pb-2">Tokoh Terkenal ESTP</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto rounded-full mb-2  flex items-center justify-center">
+                       <img src="hemingway.png" class="h-16 w-14">
+                    </div>
+                    <h3 class="font-semibold">Ernest Hemingway</h3>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto rounded-full mb-2  flex items-center justify-center">
+                        <img src="johnson.png">
+                    </div>
+                    <h3 class="font-semibold">Dwayne Johnson</h3>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto rounded-full mb-2 flex items-center justify-center">
+                       <img src="murphy.png">
+                    </div>
+                    <h3 class="font-semibold">Eddie Murphy</h3>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto rounded-full mb-2 flex items-center justify-center">
+                   <img src="trump.png">
+                    </div>
+                    <h3 class="font-semibold">Donald Trump</h3>
+                </div>
+            </div>
+        </section>
+    </div>
+   <footer class=" w-screen h-auto pl-4 pr-4 pt-2  bg-white">
+    <p class="text-2xl sm:text-3xl text-black text-center poetsen-one-regular mt-4">ERWAN PERSONAL WEBSITE</p>
+    <a href="about.html"><p class="text-black flex gap-2 font-light mt-4 cursor-pointer"><img class="h-7 w-7" src="user.png">About Me</p></a>
+    <p id="footer" class="text-black font-semibold mt-5 mb-1">Contact Me On</p>
+    <div class="flex gap-4 ">
+    <div class="space-y-2">
+    <a href="https://www.instagram.com/erwann.____?igsh=Y3R4dXc0dzNrempk"><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="ig.png">erwann_7</p></a>
+    <a><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="fb.png">Stephen Curry</p></a>
+    </div>
+    <div class="space-y-2">
+    <a><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="mail.png">erwan11@gmail.com</p></a>
+    <a><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="wa,png">+628111111</p></a>
+    </div>
+    </div>
+    <p class="text-black font-semibold mt-2">Operation Time</p>
+<p class="text-black font-thin flex gap-2 mt-1"><img class="h-7 w-7" src="jam.png">Everyday</p>
+    <p class="text-black font-semibold">Location</p>
+    <p class=" font-thin mt-1 flex gap-2 items-center cursor-pointer text-sm sm:text-base md:text-lg lg:text-lg text-justify text-black"><img class="h-7 w-7" src="lokasi.png">Dihatimu</p>
+    <p class="text-center mt-8 pb-8 poetsen-one-regular">JUST FOR PRACTICE AND FUN</p>
+</footer>
+</body>
+</html>
