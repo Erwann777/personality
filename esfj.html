@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Kepribadian ESFJ - Sang Konselor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Oleo+Script:wght@400;700&family=Poetsen+One&display=swap" rel="stylesheet">
+    <style>
+        .poetsen-one-regular {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #f0fdf4, #fef9c3);
+        }
+        .esfj-gradient {
+            background: linear-gradient(135deg, #38bdf8 0%, #f472b6 100%);
+        }
+        .star-rating {
+            color: #fbbf24;
+            margin-right: 2px;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-orange-300 to-orange-100 font-serif">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+   <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+    <div class="flex items-center h-16 px-4 sm:px-6 lg:px-8 justify-start gap-6 md:mx-auto">
+
+      <!-- Logo on Far Left -->
+      <div class="flex-shrink-0 md:fixed items-start  mb-1">
+        <img src="et.png" alt="Logo" class="h-16" />
+      </div>
+
+      <!-- Desktop Menu Items -->
+      <div class="mx-auto flex">
+        <ul class="hidden sm:flex sm:text-sm md:text-base gap-6 md:gap-6 lg:gap-16 font-serif md:ml-20 lg:ml-0">
+        <li><a href="index.html" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">HOME</a></li>
+        <li><a href="about.html" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">ABOUT</a></li>
+        <li><a href="#footer" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">CONTACT US</a></li>
+      </ul>
+      </div>
+
+      <!-- Hamburger Icon (Mobile) -->
+      <div class="sm:hidden ml-auto relative z-50">
+        <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+          <svg id="hamburger-icon" class="w-8 h-8 block" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="close-icon" class="w-8 h-8 hidden" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+   <div id="mobile-menu" class="sm:hidden hidden  flex-col gap-4 px-4 pb-4 bg-white text-center font-serif text-base space-y-4">
+      <a href="index.html" class="block p-2 rounded hover:bg-indigo-400 hover:text-white transition">HOME</a>
+      <a href="about.html" class="block p-2 rounded hover:bg-indigo-400 hover:text-white transition">ABOUT</a>
+      <a href="#footer" class="block p-2 rounded hover:bg-indigo-400 hover:text-white transition">CONTACT US</a>
+    </div>
+  </nav>
+  <!-- Toggle Script -->
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+      const isClickInside = toggleBtn.contains(e.target) || mobileMenu.contains(e.target);
+      if (!isClickInside && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+  </script>
+        <!-- Header -->
+        <header class="bg-amber-500 text-white rounded-xl p-6 mb-8 mt-14 shadow-lg">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">Tipe Kepribadian ESFJ</h1>
+            <h2 class="text-2xl md:text-3xl font-semibold text-cyan-100">Sang Konselor</h2>
+            <div class="flex justify-center space-x-2 mt-4 text-cyan-100">
+                <span>Extrovert</span>
+                <span>•</span>
+                <span>Sensing</span>
+                <span>•</span>
+                <span>Feeling</span>
+                <span>•</span>
+                <span>Judging</span>
+            </div>
+        </header>
+
+        <!-- Intro Section -->
+        <section class="mb-12 bg-white rounded-xl p-6 shadow-md">
+            <p class="text-lg mb-4">
+                ESFJ adalah tipe kepribadian yang <span class="font-semibold text-blue-700">ramah, peduli, dan suportif</span>. Mereka mencakup sekitar <span class="font-bold">9-13% dari populasi</span>. ESFJ dikenal sebagai penghubung sosial yang suka membantu, menjaga harmoni, dan sangat memperhatikan kebutuhan orang lain.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+                <div class="bg-blue-50 p-4 rounded-lg text-center">
+                    <i class="fas fa-hands-helping text-blue-600 text-2xl mb-2"></i>
+                    <h3 class="font-bold">Peduli</h3>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center">
+                    <i class="fas fa-users text-blue-600 text-2xl mb-2"></i>
+                    <h3 class="font-bold">Sosial</h3>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center">
+                    <i class="fas fa-heart text-blue-600 text-2xl mb-2"></i>
+                    <h3 class="font-bold">Hangat</h3>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center">
+                    <i class="fas fa-check text-blue-600 text-2xl mb-2"></i>
+                    <h3 class="font-bold">Teratur</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ciri-Ciri Utama -->
+        <section class="mb-12 bg-white rounded-xl p-6 shadow-md">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4 border-b-2 border-blue-200 pb-2">Ciri-Ciri Utama ESFJ</h2>
+            <ul class="space-y-3">
+                <li class="flex items-start">
+                    <span class="text-green-500 mr-2 mt-1">✓</span>
+                    <span><span class="font-semibold">Peduli pada Orang Lain</span> - Selalu ingin membantu dan mendukung</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-green-500 mr-2 mt-1">✓</span>
+                    <span><span class="font-semibold">Sosial</span> - Mudah bergaul dan membangun relasi</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-green-500 mr-2 mt-1">✓</span>
+                    <span><span class="font-semibold">Hangat dan Ramah</span> - Membuat orang lain merasa nyaman</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-green-500 mr-2 mt-1">✓</span>
+                    <span><span class="font-semibold">Teratur</span> - Menyukai keteraturan dan rutinitas</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-green-500 mr-2 mt-1">✓</span>
+                    <span><span class="font-semibold">Menghargai Tradisi</span> - Menjaga nilai dan norma sosial</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Kelebihan dan Kelemahan -->
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+            <!-- Kelebihan -->
+            <section class="bg-white rounded-xl p-6 shadow-md">
+                <h2 class="text-2xl font-bold text-blue-700 mb-4 border-b-2 border-blue-200 pb-2">Kelebihan ESFJ</h2>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Empati Tinggi</span> - Peka terhadap perasaan dan kebutuhan orang lain</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Bisa Diandalkan</span> - Selalu hadir untuk membantu</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Komunikatif</span> - Pandai menyampaikan perasaan dan membangun hubungan</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Terorganisir</span> - Menyukai lingkungan yang rapi dan terstruktur</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Setia</span> - Menjaga komitmen dan hubungan jangka panjang</span>
+                    </li>
+                </ul>
+            </section>
+            <!-- Kelemahan -->
+            <section class="bg-white rounded-xl p-6 shadow-md">
+                <h2 class="text-2xl font-bold text-red-700 mb-4 border-b-2 border-red-200 pb-2">Kelemahan ESFJ</h2>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <span class="text-red-500 mr-2 mt-1">✗</span>
+                        <span><span class="font-semibold">Terlalu Mengutamakan Orang Lain</span> - Sering mengorbankan diri sendiri</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 mr-2 mt-1">✗</span>
+                        <span><span class="font-semibold">Takut Konflik</span> - Menghindari konfrontasi demi harmoni</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 mr-2 mt-1">✗</span>
+                        <span><span class="font-semibold">Mudah Terpengaruh</span> - Kadang sulit mengambil keputusan sendiri</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 mr-2 mt-1">✗</span>
+                        <span><span class="font-semibold">Perfeksionis Sosial</span> - Ingin semua berjalan sempurna di lingkungan sosial</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 mr-2 mt-1">✗</span>
+                        <span><span class="font-semibold">Sulit Menghadapi Perubahan</span> - Kurang fleksibel pada situasi baru</span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Karier -->
+        <section class="mb-12 bg-white rounded-xl p-6 shadow-md">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4 border-b-2 border-blue-200 pb-2">ESFJ dalam Karier</h2>
+            <p class="mb-4">
+                ESFJ berkembang di lingkungan kerja yang <span class="font-semibold">sosial, terstruktur, dan membutuhkan empati tinggi</span>. Mereka unggul di bidang yang melibatkan pelayanan, pendidikan, dan hubungan antar manusia.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                <div class="bg-blue-100 p-3 rounded-lg flex items-center">
+                    <i class="fas fa-chalkboard-teacher text-blue-600 mr-3"></i>
+                    <span>Guru</span>
+                </div>
+                <div class="bg-blue-100 p-3 rounded-lg flex items-center">
+                    <i class="fas fa-user-nurse text-blue-600 mr-3"></i>
+                    <span>Perawat</span>
+                </div>
+                <div class="bg-blue-100 p-3 rounded-lg flex items-center">
+                    <i class="fas fa-hands-helping text-blue-600 mr-3"></i>
+                    <span>Pekerja Sosial</span>
+                </div>
+                <div class="bg-blue-100 p-3 rounded-lg flex items-center">
+                    <i class="fas fa-briefcase text-blue-600 mr-3"></i>
+                    <span>Manajer SDM</span>
+                </div>
+                <div class="bg-blue-100 p-3 rounded-lg flex items-center">
+                    <i class="fas fa-heart text-blue-600 mr-3"></i>
+                    <span>Konselor</span>
+                </div>
+                <div class="bg-blue-100 p-3 rounded-lg flex items-center">
+                    <i class="fas fa-user-friends text-blue-600 mr-3"></i>
+                    <span>Public Relations</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hubungan -->
+        <section class="mb-12 bg-white rounded-xl p-6 shadow-md">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4 border-b-2 border-blue-200 pb-2">ESFJ dalam Hubungan</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-pink-50 p-4 rounded-lg">
+                    <div class="text-pink-600 text-2xl mb-2">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Hubungan Romantis</h3>
+                    <p>Setia, penuh perhatian, dan selalu berusaha membahagiakan pasangan dengan cara-cara nyata.</p>
+                    <div class="mt-3 flex">
+                        <span class="star-rating">★★★★☆</span>
+                    </div>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <div class="text-blue-600 text-2xl mb-2">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Gaya Pengasuhan</h3>
+                    <p>Mendidik anak dengan kasih sayang, kedisiplinan, dan nilai-nilai sosial yang kuat.</p>
+                    <div class="mt-3 flex">
+                        <span class="star-rating">★★★★☆</span>
+                    </div>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <div class="text-green-600 text-2xl mb-2">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Pertemanan</h3>
+                    <p>Sahabat yang setia, selalu siap mendukung, dan menjaga keharmonisan kelompok.</p>
+                    <div class="mt-3 flex">
+                        <span class="star-rating">★★★★★</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kecocokan dengan Zodiak -->
+        <section class="mb-12 bg-white rounded-xl p-6 shadow-md">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4 border-b-2 border-blue-200 pb-2">Kecocokan dengan Zodiak</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <div class="text-green-600 text-2xl mb-2">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Zodiak Bumi (Taurus, Virgo, Capricorn)</h3>
+                    <p class="text-sm">Sama-sama menghargai stabilitas, tradisi, dan komitmen.</p>
+                    <div class="mt-2 text-green-700">
+                        <span class="font-semibold">Kecocokan: 90%</span>
+                    </div>
+                </div>
+                <div class="bg-pink-50 p-4 rounded-lg">
+                    <div class="text-pink-600 text-2xl mb-2">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Zodiak Air (Cancer, Scorpio, Pisces)</h3>
+                    <p class="text-sm">Bisa saling melengkapi secara emosional dan sosial.</p>
+                    <div class="mt-2 text-pink-700">
+                        <span class="font-semibold">Kecocokan: 80%</span>
+                    </div>
+                </div>
+                <div class="bg-yellow-50 p-4 rounded-lg">
+                    <div class="text-yellow-600 text-2xl mb-2">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Zodiak Api (Aries, Leo, Sagitarius)</h3>
+                    <p class="text-sm">Cocok jika mampu menjaga komunikasi dan saling menghargai peran.</p>
+                    <div class="mt-2 text-yellow-700">
+                        <span class="font-semibold">Kecocokan: 70%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tokoh Terkenal -->
+        <section class="mb-12 bg-white rounded-xl p-6 shadow-md">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4 border-b-2 border-blue-200 pb-2">Tokoh Terkenal ESFJ </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto rounded-full mb-2  flex items-center justify-center">
+                        <img src="swift.png" class="w-14 h-16">
+                    </div>
+                    <h3 class="font-semibold">Taylor Swift</h3>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto rounded-full mb-2  flex items-center justify-center">
+                        <img src="garner.png" class="h-16 w-12">
+                    </div>
+                    <h3 class="font-semibold">Jennifer Garner</h3>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto rounded-full mb-2  flex items-center justify-center">
+                        <img src="jackman.png" class="w-16 h-16">
+                    </div>
+                    <h3 class="font-semibold">Hugh Jackman</h3>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto rounded-full mb-2  flex items-center justify-center">
+                        <img src="hathaway.png" class="h-16">
+                    </div>
+                    <h3 class="font-semibold">Anne Hathaway</h3>
+                </div>
+            </div>
+        </section>
+    </div>
+   <footer class=" w-screen h-auto pl-4 pr-4 pt-2  bg-white">
+    <p class="text-2xl sm:text-3xl text-black text-center poetsen-one-regular mt-4">ERWAN PERSONAL WEBSITE</p>
+    <a href="about.html"><p class="text-black flex gap-2 font-light mt-4 cursor-pointer"><img class="h-7 w-7" src="user.png">About Me</p></a>
+    <p id="footer" class="text-black font-semibold mt-5 mb-1">Contact Me On</p>
+    <div class="flex gap-4 ">
+    <div class="space-y-2">
+    <a href="https://www.instagram.com/erwann.?igsh=Y3R4dXc0dzNrempk"><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="ig.png">erwann_7</p></a>
+    <a><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="fb.png">Stephen Curry</p></a>
+    </div>
+    <div class="space-y-2">
+    <a><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="mail.png">erwan11@gmail.com</p></a>
+    <a><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="wa,png">+628111111</p></a>
+    </div>
+    </div>
+    <p class="text-black font-semibold mt-2">Operation Time</p>
+<p class="text-black font-thin flex gap-2 mt-1"><img class="h-7 w-7" src="jam.png">Everyday</p>
+    <p class="text-black font-semibold">Location</p>
+    <p class=" font-thin mt-1 flex gap-2 items-center cursor-pointer text-sm sm:text-base md:text-lg lg:text-lg text-justify text-black"><img class="h-7 w-7" src="lokasi.png">Dihatimu</p>
+    <p class="text-center mt-8 pb-8 poetsen-one-regular">JUST FOR PRACTICE AND FUN</p>
+</footer>
+</body>
+</html>

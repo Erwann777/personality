@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Document</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Oleo+Script:wght@400;700&family=Poetsen+One&display=swap" rel="stylesheet">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+ <style>
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-down {
+      opacity: 0;
+      animation: fadeDown 0.5s ease-out forwards;
+    }
+  </style>
+  <style type="text/tailwindcss">
+  .bg-hero {
+    background-image: url('doctor.png');
+    background-size: cover;
+    
+  }
+  .scroll {
+    scroll-behavior: smooth;
+  }
+ .cherry-bomb-one-regular {
+  font-family: "Cherry Bomb One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+ .poetsen-one-regular {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.oleo-script-regular {
+  font-family: "Oleo Script", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+ @keyframes slideInFromLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .animate-slide-in-left {
+      animation: slideInFromLeft 1.2s ease forwards;
+    }
+</style>
+</head>
+<body class= " pt-16 bg-gradient-to-b from-indigo-100 to-sky-100 min-h-screen scroll-smooth"> 
+    <div class="container mx-auto px-4 py-8 max-w-4xl scroll-smooth">
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+    <div class="flex items-center h-16 px-4 sm:px-6 lg:px-8 justify-start gap-6 md:mx-auto">
+
+      <!-- Logo on Far Left -->
+      <div class="flex-shrink-0 md:fixed items-start  mb-1">
+        <img src="et.png" alt="Logo" class="h-16" />
+      </div>
+
+      <!-- Desktop Menu Items -->
+      <div class="mx-auto flex">
+        <ul class="hidden sm:flex sm:text-sm md:text-base gap-6 md:gap-6 lg:gap-16 font-serif md:ml-20 lg:ml-0">
+        <li><a href="#" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">HOME</a></li>
+        <li><a href="#personality" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">PERSONALITY</a></li>
+        <li><a href="about.html" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">ABOUT</a></li>
+        <li><a href="#footer" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">CONTACT US</a></li>
+      </ul>
+    </div>
+      <!-- Hamburger Icon (Mobile) -->
+      <div class="sm:hidden ml-auto relative z-50">
+        <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+          <svg id="hamburger-icon" class="w-8 h-8 block" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="close-icon" class="w-8 h-8 hidden" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="sm:hidden hidden  flex-col gap-4 px-4 pb-4 bg-white text-center font-serif text-base space-y-4">
+      <a href="#" class="block p-2 rounded hover:bg-indigo-400 hover:text-white transition">HOME</a>
+      <a href="#personality" class="block p-2 rounded hover:bg-indigo-400 hover:text-white transition">PERSONALITY</a>
+      <a href="about.html" class="block p-2 rounded hover:bg-indigo-400 hover:text-white transition">ABOUT</a>
+      <a href="#footer" class="block p-2 rounded hover:bg-indigo-400 hover:text-white transition">CONTACT US</a>
+    </div>
+  </nav>
+  <!-- Toggle Script -->
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+      const isClickInside = toggleBtn.contains(e.target) || mobileMenu.contains(e.target);
+      if (!isClickInside && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+  </script>
+<div class="animate-slide-in-left">
+<a href="MBTI.html"><div class="flex items-center justify-center mt-8">
+  <p class="bg-sky-400 cherry-bomb-one-regular p-2 w-3/4 sm:w-auto text-center sm:text-base text-xs  font-semibold hover:bg-white text-white hover:text-sky-300 hover:scale-110 transition duration-300 rounded-full">FIND OUT YOUR PERSONALITY🔍</p>
+ </div></a>
+  <div class="flex flex-col items-center justify-center mt-8">
+    <div class="p-4 flex flex-col items-center justify-center">
+      <img src="dokter2.png" alt="Dokter" class="size-64 items-center justify-center">
+      <div class="bg-white p-3 sm:p-6 mt-4 rounded-xl md:w-3/4">
+        <p class=" text-start font-serif font-semibold text-lg">
+        Apa Itu Kepribadian <span>❓🤔</span>
+      </p>
+      <p class="mt-4 text-justify font-serif text-base leading-relaxed">
+        Kepribadian adalah keseluruhan pola perilaku, pikiran, emosi, dan cara seseorang
+        menanggapi lingkungan yang membedakannya dari orang lain. Kepribadian mencerminkan
+        cara khas seseorang berinteraksi dengan dunia di sekitarnya, termasuk bagaimana ia
+        berbicara, merasakan, berpikir, mengambil keputusan, serta berhubungan dengan orang
+        lain. Kepribadian bersifat relatif stabil sepanjang waktu dan situasi, meskipun dapat
+        mengalami perubahan seiring pertumbuhan, pengalaman hidup, dan kondisi tertentu.
+      </p>
+      </div>
+      <div class="bg-white p-3 sm:p-6 mt-10 rounded-xl space-y-3 md:w-3/4">
+         <p class="text-start font-serif font-semibold text-sm sm:text-base">
+          🩺 Faktor Pembentuk Kepribadian
+         </p>
+         <p class="text-md font-serif font-semibold bg-red-100 p-2 rounded-lg">
+          🧬 1. Faktor Biologis & Genetik <span class="flex-col flex font-normal text-md text-justify font-serif">Warisan genetik memegang peranan besar: studi kembar identik menunjukkan bahwa 30–60 % trait kepribadian dipengaruhi oleh genetika.</span>
+         </p>
+         <p class="text-md font-serif font-semibold bg-amber-100 p-2 rounded-lg">
+          👨‍👩‍👧‍👦 2. Faktor Keluarga & Pengasuhan <span class="flex-col flex font-normal text-md text-justify font-serif">Gaya pengasuhan orang tua (otoriter, permisif, atau suportif) sangat membentuk kepercayaan diri, cara menyelesaikan konflik, dan stabilitas emosional anak.</span>
+         </p>
+         <p class="text-md font-serif font-semibold bg-green-100 p-2 rounded-lg">
+          🌍 3. Lingkungan & Budaya <span class="flex-col flex font-normal text-md text-justify font-serif">Teman sebaya, sekolah, dan komunitas dapat membentuk nilai, norma, dan kepribadian sosial—misal menjadi lebih terbuka atau kolaboratif.</span>
+         </p>
+         <p class="text-md font-serif font-semibold bg-sky-100 p-2 rounded-lg">
+          🏙️ 4. Lingkungan Fisik & Mediasi Media <span class="flex-col flex font-normal text-md text-justify font-serif">Paparan media dan teknologi turut membentuk persepsi dunia, cara berinteraksi, dan tingkat optimisme atau empati </span>
+         </p>
+          <p class="text-md font-serif font-semibold bg-blue-100 p-2 rounded-lg">
+          📚 5. Pendidikan & Pengalaman Kelompok <span class="flex-col flex font-normal text-md text-justify font-serif">Pengalaman di sekolah, universitas, dan lingkungan belajar membangun keterampilan sosial (leadership, kolaborasi) dan membentuk nilai sikap terhadap pencapaian.</span>
+          </p>
+          <p class="text-md font-serif font-semibold bg-yellow-100  p-2 rounded-lg">
+          🌟 6. Pengalaman Hidup & Peristiwa Signifikan <span class="flex-col flex font-normal text-md text-justify font-serif">Peristiwa seperti trauma, teman-teman dekat, perubahan besar dalam hidup bisa memberi dampak mendalam pada karakter, gaya coping, dan kepercayaan diri individu.</span>
+          </p>
+      </div>
+      
+      <p class="mt-10 mb-4 font-serif text-sm sm:text-base font-semibold">MBTI (Myers-Briggs Type Indicator)</p>
+      <img src="MBTI.png" class=" ">
+      <div class="grid lg:grid-cols-2 lg:gap-8 md:w-full">
+      <div class="bg-white p-3 sm:p-6 mt-4 rounded-xl">
+        <p class="font-serif text-start text-lg font-semibold">📝 Pengertian</p>
+        <p class="text-justify font-serif mt-4 leading-relaxed text-base">MBTI, atau Myers-Briggs Type Indicator, adalah tes kepribadian yang dirancang untuk membantu seseorang memahami preferensi mereka dalam berpikir, merasakan, dan berinteraksi dengan dunia sekitar. Tes ini mengelompokkan individu ke dalam salah satu dari 16 tipe kepribadian berdasarkan preferensi mereka di empat domain yang berbeda. MBTI dikembangkan oleh Isabel Briggs Myers dan ibunya, Katharine Cook Briggs, yang terinspirasi oleh teori psikologi Carl Jung. Tes ini sering digunakan untuk pengembangan diri, karir, dan pemahaman interpersonal</p>
+      </div>
+      <div class="bg-white p-3 sm:p-6 mt-4 rounded-xl">
+        <p class="font-serif text-start text-lg font-semibold">✨ Manfaat Tes MBTI</p>
+        <ul class="space-y-3 mt-4 text-base">
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Self-awareness</span> - Memahami Siapa Kita</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Karier & pendidikan</span> - Menuju Pilihan Yang Tepat</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Komunikasi & hubungan</span> - Lebih Empatik</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Kerja tim & produktivitas</span> - Koordinasi Optimal</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Kepemimpinan</span> - Kesadaran Strategis Diri & Orang Lain</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Stress & adaptasi</span> - Strategi Coping Personal</span>
+                    </li>
+                </ul>
+      </div>
+      </div>
+    </div>
+</div>
+
+<div id="personality" class="flex items-center justify-center mt-8  text-center">
+  <p class="text-md p-3 text-justify font-serif font-semibold sm:text-md">Menurut MBTI (Myers-Briggs Type Indicator) terdapat 16 tipe kepribadian :</p>
+</div>
+
+<div class="lg:w-full mx-auto"> 
+<div class="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-1 text-center p-4 sm:gap-4 md:gap-4 lg:gap-4 mt-8">
+    <a href="istj.html"><div class="bg-blue-600 border rounded-lg p-4 text-center shadow hover:shadow-lg hover:scale-105 transition-transform font-serif font-semibold fade-down text-white lg:bg-blue-600" style="animation-delay: 0s;">ISTJ</div></a>
+   <a href="isfj.html" style="animation-delay: 0.2s;">
+  <div class="bg-blue-600 border rounded-lg p-4 text-center shadow hover:shadow-lg hover:scale-105 transition-transform font-serif font-semibold fade-down text-white lg:bg-blue-600">ISFJ</div>
+</a>
+<a href="infj.html" style="animation-delay: 0.3s;">
+  <div class="bg-blue-600 border rounded-lg p-4 text-center shadow hover:shadow-lg hover:scale-105 transition-transform font-serif font-semibold fade-down text-white lg:bg-blue-600">INFJ</div>
+</a>
+<a href="intj.html" style="animation-delay: 0.4s;">
+  <div class="bg-blue-600 border rounded-lg p-4 text-center shadow hover:shadow-lg hover:scale-105 transition-transform font-serif font-semibold fade-down text-white lg:bg-blue-600">INTJ</div>
+</a>
+<a href="istp.html" style="animation-delay: 0.5s;">
+  <div class="bg-blue-500 border rounded-lg p-4 text-center shadow hover:shadow-lg hover:scale-105 transition-transform font-serif font-semibold fade-down text-white lg:bg-blue-600">ISTP</div>
+</a>
+<a href="isfp.html" style="animation-delay: 0.6s;">
+  <div class="bg-blue-500 border rounded-lg p-4 text-center shadow hover:shadow-lg hover:scale-105 transition-transform font-serif font-semibold fade-down text-white lg:bg-blue-600">ISFP</div>
+</a>
+<a href="infp.html" style="animation-delay: 0.7s;">
+  <div class="bg-blue-500 border rounded-lg p-4 text-center shadow hover:shadow-lg hover:scale-105 transition-transform font-serif font-semibold fade-down text-white lg:bg-blue-600">INFP</div>
+</a>
+<a href="intp.html" style="animation-delay: 0.8s;">
+  <div class="bg-blue-500 border rounded-lg p-4 text-center shadow hover:shadow-lg hover:scale-105 transition-transform font-serif font-semibold fade-down text-white lg:bg-blue-600">INTP</div>
+</a>
+<a href="estp.html" style="animation-delay: 0.9s;">
+  <div class="bg-blue-400 border rounded-lg p-4 text-center shadow hover:shadow-lg hover:scale-105 transition-transform font-serif font-semibold fade-down text-white lg:bg-blue-400">ESTP</div>
+</a>
+<a href="esfp.html" style="animation-delay: 1.0s;">
+  <div class="bg-blue-400 border rounded-lg p-4 text-center shadow hover:shadow-lg hover:scale-105 transition-transform font-serif font-semibold fade-down text-white lg:bg-blue-400">ESFP</div>
+</a>
+<a href="enfp.html" style="animation-delay: 1.1s;">
+  <div class="bg-blue-400 border rounded-lg p-4 text-center shadow hover:shadow-lg hover:scale-105 transition-transform font-serif font-semibold fade-down text-white lg:bg-blue-400">ENFP</div>
+</a>
+<a href="entp.html" style="animation-delay: 1.2s;">
+  <div class="bg-blue-400 border rounded-lg p-4 text-center shadow hover:shadow-lg hover:scale-105 transition-transform font-serif font-semibold fade-down text-white lg:bg-blue-400">ENTP</div>
+</a>
+<a href="estj.html" style="animation-delay: 1.3s;">
+  <div class="bg-blue-300 border rounded-lg p-4 text-center shadow hover:shadow-lg hover:scale-105 transition-transform font-serif font-semibold fade-down text-white lg:bg-blue-400">ESTJ</div>
+</a>
+<a href="esfj.html" style="animation-delay: 1.4s;">
+  <div class="bg-blue-300 border rounded-lg p-4 text-center shadow hover:shadow-lg hover:scale-105 transition-transform font-serif font-semibold fade-down text-white lg:bg-blue-400">ESFJ</div>
+</a>
+<a href="enfj.html" style="animation-delay: 1.5s;">
+  <div class="bg-blue-300 border rounded-lg p-4 text-center shadow hover:shadow-lg hover:scale-105 transition-transform font-serif font-semibold fade-down text-white lg:bg-blue-400">ENFJ</div>
+</a>
+<a href="entj.html" style="animation-delay: 1.6s;">
+  <div class="bg-blue-300 border rounded-lg p-4 text-center shadow hover:shadow-lg hover:scale-105 transition-transform font-serif font-semibold fade-down text-white lg:bg-blue-400">ENTJ</div>
+</a>
+</div>
+ 
+  <div class="bg-gradient-to-r from-indigo-300 to-blue-300 w-fit ml-4 rounded-full items-center">   
+  <p class="transition-transform font-serif font-semibold fade-down text-justify text-sm p-4 " style="animation-delay: 0.5;">*Note : Tekan untuk temukan penjelasan dari jenis kepribadian tersebut</p>
+</div>
+</div>
+
+<div class="flex justify-center mt-16 px-4 mb-20">
+  <a href="MBTI.html"><button class="bg-indigo-500 text-white cherry-bomb-one-regular font-semibold text-sm sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full shadow hover:bg-white hover:text-indigo-600 hover:scale-110 transition fade-down" style="animation-delay: 0.5s;">
+    TEMUKAN KEPRIBADIANMU ❤️
+  </button>
+  </a>
+</div>
+</div>
+</div>
+</div>
+<footer class=" w-screen h-auto pl-4 pr-4 pt-2  bg-white">
+    <p class="text-2xl sm:text-3xl text-black text-center poetsen-one-regular mt-4">ERWAN PERSONAL WEBSITE</p>
+    <a href="about.html"><p class="text-black flex gap-2 font-light mt-4 cursor-pointer"><img class="h-7 w-7" src="user.png">About Me</p></a>
+    <p id="footer" class="text-black font-semibold mt-5 mb-1">Contact Me On</p>
+    <div class="flex gap-4 ">
+    <div class="space-y-2">
+    <a href="https://www.instagram.com/erwann.____?igsh=Y3R4dXc0dzNrempk"><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="ig.png">erwann_7</p></a>
+    <a><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="fb.png">Stephen Curry</p></a>
+    </div>
+    <div class="space-y-2">
+    <a><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="mail.png">erwan11@gmail.com</p></a>
+    <a><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="wa,png">+628111111</p></a>
+    </div>
+    </div>
+    <p class="text-black font-semibold mt-2">Operation Time</p>
+<p class="text-black font-thin flex gap-2 mt-1"><img class="h-7 w-7" src="jam.png">Everyday</p>
+    <p class="text-black font-semibold">Location</p>
+    <p class=" font-thin mt-1 flex gap-2 items-center cursor-pointer text-sm sm:text-base md:text-lg lg:text-lg text-justify text-black"><img class="h-7 w-7" src="lokasi.png">Dihatimu</p>
+    <p class="text-center mt-8 pb-8 poetsen-one-regular">JUST FOR PRACTICE AND FUN</p>
+</footer>
+ 
+</body>
+
+</html>

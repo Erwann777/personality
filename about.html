@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Diri & Deskripsi Website MBTI</title>
+  <!-- Google Fonts Poppins -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Oleo+Script:wght@400;700&family=Poetsen+One&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .poetsen-one-regular {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.cherry-bomb-one-regular {
+  font-family: "Cherry Bomb One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.oleo-script-regular {
+  font-family: "Oleo Script", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.oleo-script-bold {
+  font-family: "Oleo Script", system-ui;
+  font-weight: 700;
+  font-style: normal;
+}
+
+    @keyframes slideInFromLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .animate-slide-in-left {
+      animation: slideInFromLeft 1.2s ease forwards;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 min-h-screen flex flex-col items-center justify-center ">
+   <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+    <div class="flex items-center h-16 px-4 sm:px-6 lg:px-8 justify-start gap-6 md:mx-auto">
+
+      <!-- Logo on Far Left -->
+      <div class="flex-shrink-0 md:fixed items-start  mb-1">
+        <img src="et.png" alt="Logo" class="h-16" />
+      </div>
+
+      <!-- Desktop Menu Items -->
+      <div class="mx-auto flex">
+        <ul class="hidden sm:flex sm:text-sm md:text-base gap-6 md:gap-6 lg:gap-16 font-serif md:ml-20 lg:ml-0">
+        <li><a href="index.html" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">HOME</a></li>
+        <li><a href="#" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">ABOUT</a></li>
+        <li><a href="#footer" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">CONTACT US</a></li>
+      <li class="animate-bounce transition duration-300"><a href="MBTI.html" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">START MBTI TEST‼️</a></li>
+      </div>
+
+      <!-- Hamburger Icon (Mobile) -->
+      <div class="sm:hidden ml-auto relative z-50">
+        <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+          <svg id="hamburger-icon" class="w-8 h-8 block" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="close-icon" class="w-8 h-8 hidden" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="sm:hidden hidden  flex-col gap-4 px-4 pb-4 bg-white text-center font-serif text-base space-y-4">
+      <a href="index.html" class="block p-2 rounded hover:bg-indigo-400 hover:text-white transition">HOME</a>
+      <a href="#" class="block p-2 rounded hover:bg-indigo-400 hover:text-white transition">ABOUT</a>
+      <a href="#footer" class="block p-2 rounded hover:bg-indigo-400 hover:text-white transition">CONTACT US</a>
+       <li class="animate-bounce transition duration-300 list-none"><a href="MBTI.html" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">START MBTI TEST‼️</a></li>
+    </div>
+  </nav>
+  <!-- Toggle Script -->
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+      const isClickInside = toggleBtn.contains(e.target) || mobileMenu.contains(e.target);
+      if (!isClickInside && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+  </script>
+    <div class="max-w-6xl p-6 mt-20 w-full grid grid-cols-1 md:grid-cols-2 gap-8 animate-slide-in-left">
+    <!-- Box Data Diri -->
+    <div class="bg-white/80 text-justify backdrop-blur-md rounded-3xl p-8 shadow-xl border flex flex-col items-center ">
+      <img src="me.png" class="rounded-2xl shadow-lg w-36 h-36 object-cover border-4 border-white mb-6" />
+      <h1 class="text-4xl cherry-bomb-one-regular text-indigo-400 mb-3">Erwan</h1>
+      <div class="poetsen-one-regular text-center">
+      <p class="text-gray-700 mb-1"><span class="font-semibold text-indigo-700">Alamat :</span> Ada dimana mana</p>
+      <p class="text-gray-700 mb-1"><span class="font-semibold text-indigo-700">Email :</span> erwan11@gmail.com</p>
+      <p class="text-gray-700 mb-1"><span class="font-semibold text-indigo-700">Telepon :</span> 0811-1616-7777</p>
+      <p class="text-gray-700 mb-1"><span class="font-semibold text-indigo-700">Tanggal Lahir :</span> 16 Mei 2006</p>
+      <p class="text-slate-700 italic max-w-md text-center mt-10 ">
+       "Seorang Pelajar Yang Sedang Belajar Membuat Website Yang Berguna.😃"
+      </p>
+      </div>
+    </div>
+
+    <!-- Box Deskripsi Website -->
+    <div class="bg-white/80 poetsen-one-regular text-justify backdrop-blur-md rounded-3xl p-8 shadow-xl border">
+      <h2 class="text-3xl font-bold mb-6 text-center">Tentang Website <span class="flex flex-col text-center">ET Personality</span></h2>
+      <p class="text-gray-800 mb-5">
+        Website ini didedikasikan untuk membantu Anda mengenal diri sendiri secara lebih mendalam melalui tes MBTI (Myers-Briggs Type Indicator) yang interaktif dan mudah digunakan. Dengan desain visual yang menarik dan pengalaman pengguna yang intuitif, situs ini memungkinkan setiap orang untuk mengeksplorasi tipe kepribadian mereka secara menyenangkan dan informatif.
+      </p>
+      <p class="text-gray-800 mb-5">
+       Asal usul website ini adalah ide dari salah satu teman saya. Menurut saya itu termasuk ide yang menarik sehingga saya mencoba membuat website ini. Waktu pengerjaan website ini kurang lebih selama 2 minggu lamanya. Saya harap website ini dapat berguna bagi anda yang menggunakannya.😝
+      </p>
+      <p class="text-gray-800">
+        Temukan tipe kepribadian Anda, pelajari kelebihan dan potensi diri, serta bagikan hasilnya kepada teman dan keluarga. Selamat Mencobaaa
+      </p>
+    </div>
+  </div>
+  <footer class=" w-screen h-auto pl-4 pr-4 pt-2  bg-white">
+    <p class="text-2xl sm:text-3xl text-black text-center poetsen-one-regular mt-4">ERWAN PERSONAL WEBSITE</p>
+    <a href="about.html"><p class="text-black flex gap-2 font-light mt-4 cursor-pointer"><img class="h-7 w-7" src="user.png">About Me</p></a>
+    <p id="footer" class="text-black font-semibold mt-5 mb-1">Contact Me On</p>
+    <div class="flex gap-4 ">
+    <div class="space-y-2">
+    <a href="https://www.instagram.com/erwann.?igsh=Y3R4dXc0dzNrempk"><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="ig.png">erwann_7</p></a>
+    <a><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="fb.png">Stephen Curry</p></a>
+    </div>
+    <div class="space-y-2">
+    <a><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="mail.png">erwan11@gmail.com</p></a>
+    <a><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="wa,png">+628111111</p></a>
+    </div>
+    </div>
+    <p class="text-black font-semibold mt-2">Operation Time</p>
+<p class="text-black font-thin flex gap-2 mt-1"><img class="h-7 w-7" src="jam.png">Everyday</p>
+    <p class="text-black font-semibold">Location</p>
+    <p class=" font-thin mt-1 flex gap-2 items-center cursor-pointer text-sm sm:text-base md:text-lg lg:text-lg text-justify text-black"><img class="h-7 w-7" src="lokasi.png">Dihatimu</p>
+    <p class="text-center mt-8 pb-8 poetsen-one-regular">JUST FOR PRACTICE AND FUN</p>
+</footer>
+</body>
+</html>

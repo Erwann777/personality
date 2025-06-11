@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Kepribadian ISFJ - Sang Pelindung</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Oleo+Script:wght@400;700&family=Poetsen+One&display=swap" rel="stylesheet">
+    <style>
+        .bg-purple-50 {
+            background-color: #f5f3ff;
+        }
+        .bg-purple-700 {
+            background-color: #6d28d9;
+        }
+        .poetsen-one-regular {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+    </style>
+</head>
+<body class="bg-gradient-to-b from-purple-400 to-purple-200 font-serif">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+       <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+    <div class="flex items-center h-16 px-4 sm:px-6 lg:px-8 justify-start gap-6 md:mx-auto">
+
+      <!-- Logo on Far Left -->
+      <div class="flex-shrink-0 md:fixed items-start  mb-1">
+        <img src="et.png" alt="Logo" class="h-16" />
+      </div>
+
+      <!-- Desktop Menu Items -->
+      <div class="mx-auto flex">
+        <ul class="hidden sm:flex sm:text-sm md:text-base gap-6 md:gap-6 lg:gap-16 font-serif md:ml-20 lg:ml-0">
+        <li><a href="index.html" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">HOME</a></li>
+        <li><a href="about.html" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">ABOUT</a></li>
+        <li><a href="#footer" class="p-2 rounded-full hover:bg-indigo-400 hover:text-white hover:scale-110 transition">CONTACT US</a></li>
+      </ul>
+      </div>
+
+      <!-- Hamburger Icon (Mobile) -->
+      <div class="sm:hidden ml-auto relative z-50">
+        <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+          <svg id="hamburger-icon" class="w-8 h-8 block" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="close-icon" class="w-8 h-8 hidden" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="sm:hidden hidden  flex-col gap-4 px-4 pb-4 bg-white text-center font-serif text-base space-y-4">
+      <a href="index.html" class="block p-2 rounded hover:bg-indigo-400 hover:text-white transition">HOME</a>
+      <a href="about.html" class="block p-2 rounded hover:bg-indigo-400 hover:text-white transition">ABOUT</a>
+      <a href="#footer" class="block p-2 rounded hover:bg-indigo-400 hover:text-white transition">CONTACT US</a>
+    </div>
+  </nav>
+  <!-- Toggle Script -->
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+      const isClickInside = toggleBtn.contains(e.target) || mobileMenu.contains(e.target);
+      if (!isClickInside && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+  </script>
+        <!-- Header -->
+        <header class="bg-purple-700 text-white rounded-xl p-6 mb-8 mt-14 shadow-lg">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">Tipe Kepribadian ISFJ</h1>
+            <h2 class="text-2xl md:text-3xl font-semibold text-purple-200">Sang Pelindung</h2>
+            <div class="flex justify-center space-x-2 mt-4 text-purple-300">
+                <span>Introvert</span>
+                <span>•</span>
+                <span>Sensing</span>
+                <span>•</span>
+                <span>Feeling</span>
+                <span>•</span>
+                <span>Judging</span>
+            </div>
+        </header>
+
+        <!-- Intro Section -->
+        <section class="mb-12 bg-white rounded-xl p-6 shadow-md">
+            <p class="text-lg mb-4">
+                ISFJ adalah tipe kepribadian yang <span class="font-semibold text-purple-700">setia, bertanggung jawab, dan penuh perhatian</span>. Mereka mencakup sekitar <span class="font-bold">9-14% dari populasi</span>. ISFJ dikenal sebagai pribadi yang hangat, dapat diandalkan, dan selalu berusaha membantu orang lain.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+                <div class="bg-purple-50 p-4 rounded-lg text-center">
+                    <i class="fas fa-hands-helping text-purple-600 text-2xl mb-2"></i>
+                    <h3 class="font-bold">Melayani</h3>
+                </div>
+                <div class="bg-purple-50 p-4 rounded-lg text-center">
+                    <i class="fas fa-shield-alt text-purple-600 text-2xl mb-2"></i>
+                    <h3 class="font-bold">Protektif</h3>
+                </div>
+                <div class="bg-purple-50 p-4 rounded-lg text-center">
+                    <i class="fas fa-calendar-check text-purple-600 text-2xl mb-2"></i>
+                    <h3 class="font-bold">Terorganisir</h3>
+                </div>
+                <div class="bg-purple-50 p-4 rounded-lg text-center">
+                    <i class="fas fa-heart text-purple-600 text-2xl mb-2"></i>
+                    <h3 class="font-bold">Perhatian</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ciri-Ciri Utama -->
+        <section class="mb-12 bg-white rounded-xl p-6 shadow-md">
+            <h2 class="text-2xl font-bold text-purple-800 mb-4 border-b-2 border-purple-200 pb-2">Ciri-Ciri Utama ISFJ</h2>
+            <ul class="space-y-3">
+                <li class="flex items-start">
+                    <span class="text-green-500 mr-2 mt-1">✓</span>
+                    <span><span class="font-semibold">Praktis dan Realistis</span> - Berfokus pada fakta dan detail konkret</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-green-500 mr-2 mt-1">✓</span>
+                    <span><span class="font-semibold">Bertanggung Jawab</span> - Komitmen tinggi pada kewajiban</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-green-500 mr-2 mt-1">✓</span>
+                    <span><span class="font-semibold">Sensitif terhadap Kebutuhan Orang Lain</span> - Sering mengutamakan orang lain</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-green-500 mr-2 mt-1">✓</span>
+                    <span><span class="font-semibold">Tradisional</span> - Menghargai ketertiban dan stabilitas</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-green-500 mr-2 mt-1">✓</span>
+                    <span><span class="font-semibold">Memori yang Kuat</span> - Ingatan detail yang luar biasa</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Kelebihan dan Kelemahan -->
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+            <!-- Kelebihan -->
+            <section class="bg-white rounded-xl p-6 shadow-md">
+                <h2 class="text-2xl font-bold text-purple-700 mb-4 border-b-2 border-purple-200 pb-2">Kelebihan ISFJ</h2>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Dapat Diandalkan</span> - Selalu menepati janji dan kewajiban</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Perhatian</span> - Memperhatikan kebutuhan orang lain</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Keterampilan Organisasi</span> - Kemampuan manajerial yang baik</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Loyal</span> - Komitmen kuat pada hubungan</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 mr-2 mt-1">✔</span>
+                        <span><span class="font-semibold">Kerja Keras</span> - Tekun dalam menyelesaikan tugas</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Kelemahan -->
+            <section class="bg-white rounded-xl p-6 shadow-md">
+                <h2 class="text-2xl font-bold text-red-700 mb-4 border-b-2 border-red-200 pb-2">Kelemahan ISFJ</h2>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <span class="text-red-500 mr-2 mt-1">✗</span>
+                        <span><span class="font-semibold">Terlalu Altruistik</span> - Sering mengabaikan kebutuhan sendiri</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 mr-2 mt-1">✗</span>
+                        <span><span class="font-semibold">Menghindari Perubahan</span> - Tidak nyaman dengan hal baru</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 mr-2 mt-1">✗</span>
+                        <span><span class="font-semibold">Sulit Mengatakan Tidak</span> - Sering mengambil terlalu banyak tanggung jawab</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 mr-2 mt-1">✗</span>
+                        <span><span class="font-semibold">Penyimpan Dendam</span> - Sulit melupakan kesalahan orang</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 mr-2 mt-1">✗</span>
+                        <span><span class="font-semibold">Kritis terhadap Diri Sendiri</span> - Standar terlalu tinggi untuk diri sendiri</span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Karier -->
+        <section class="mb-12 bg-white rounded-xl p-6 shadow-md">
+            <h2 class="text-2xl font-bold text-purple-800 mb-4 border-b-2 border-purple-200 pb-2">ISFJ dalam Karier</h2>
+            <p class="mb-4">
+                ISFJ berkembang dalam pekerjaan yang <span class="font-semibold">terstruktur, melayani orang lain, dan membutuhkan perhatian terhadap detail</span>. Mereka unggul dalam bidang yang memungkinkan mereka membantu dan melindungi orang lain.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                <div class="bg-purple-100 p-3 rounded-lg flex items-center">
+                    <i class="fas fa-user-nurse text-purple-600 mr-3"></i>
+                    <span>Perawat/Dokter</span>
+                </div>
+                <div class="bg-purple-100 p-3 rounded-lg flex items-center">
+                    <i class="fas fa-chalkboard-teacher text-purple-600 mr-3"></i>
+                    <span>Guru</span>
+                </div>
+                <div class="bg-purple-100 p-3 rounded-lg flex items-center">
+                    <i class="fas fa-briefcase text-purple-600 mr-3"></i>
+                    <span>Administrator</span>
+                </div>
+                <div class="bg-purple-100 p-3 rounded-lg flex items-center">
+                    <i class="fas fa-child text-purple-600 mr-3"></i>
+                    <span>Pekerja Sosial</span>
+                </div>
+                <div class="bg-purple-100 p-3 rounded-lg flex items-center">
+                    <i class="fas fa-utensils text-purple-600 mr-3"></i>
+                    <span>Nutrisionis</span>
+                </div>
+                <div class="bg-purple-100 p-3 rounded-lg flex items-center">
+                    <i class="fas fa-book text-purple-600 mr-3"></i>
+                    <span>Pustakawan</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hubungan -->
+        <section class="mb-12 bg-white rounded-xl p-6 shadow-md">
+            <h2 class="text-2xl font-bold text-purple-800 mb-4 border-b-2 border-purple-200 pb-2">ISFJ dalam Hubungan</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-pink-50 p-4 rounded-lg">
+                    <div class="text-pink-600 text-2xl mb-2">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Hubungan Romantis</h3>
+                    <p>Setia dan penuh perhatian, menunjukkan kasih sayang melalui tindakan nyata daripada kata-kata.</p>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <div class="text-blue-600 text-2xl mb-2">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Gaya Pengasuhan</h3>
+                    <p>Penuh kasih sayang dan protektif, menciptakan lingkungan rumah yang stabil dan teratur.</p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <div class="text-green-600 text-2xl mb-2">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Pertemanan</h3>
+                    <p>Setia dan dapat diandalkan, meskipun cenderung memiliki lingkaran pertemanan kecil.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Zodiak -->
+        <section class="mb-12 bg-white rounded-xl p-6 shadow-md">
+            <h2 class="text-2xl font-bold text-purple-800 mb-4 border-b-2 border-purple-200 pb-2">Kecocokan dengan Zodiak</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-yellow-50 p-4 rounded-lg">
+                    <div class="text-yellow-600 text-2xl mb-2">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Zodiak Api (Aries, Leo, Sagitarius)</h3>
+                    <p class="text-sm">ISFJ mungkin kesulitan dengan sifat impulsif zodiak api, tetapi bisa saling melengkapi.</p>
+                    <div class="mt-2 text-yellow-700">
+                        <span class="font-semibold">Kecocokan: 60%</span>
+                    </div>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <div class="text-blue-600 text-2xl mb-2">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Zodiak Air (Cancer, Scorpio, Pisces)</h3>
+                    <p class="text-sm">Kesensitifan yang sama menciptakan hubungan yang harmonis dan penuh pengertian.</p>
+                    <div class="mt-2 text-blue-700">
+                        <span class="font-semibold">Kecocokan: 90%</span>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <div class="text-gray-600 text-2xl mb-2">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Zodiak Tanah (Taurus, Virgo, Capricorn)</h3>
+                    <p class="text-sm">Kesamaan sifat praktis dan terorganisir membuat hubungan sangat stabil.</p>
+                    <div class="mt-2 text-gray-700">
+                        <span class="font-semibold">Kecocokan: 85%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tokoh Terkenal -->
+        <section class="mb-12 bg-white rounded-xl p-6 shadow-md">
+            <h2 class="text-2xl font-bold text-purple-800 mb-4 border-b-2 border-purple-200 pb-2">Tokoh Terkenal ISFJ</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                    <div class=" w-16 h-16 mx-auto rounded-full mb-2 flex items-center justify-center">
+                        <img src="ed.png">
+                    </div>
+                    <h3 class="font-semibold">Ed Sheeran</h3>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto rounded-full mb-2 flex items-center justify-center">
+                      <img src="gomez.png" class="h-16 w-14">
+                    </div>
+                    <h3 class="font-semibold">Selena Gomez</h3>
+                </div>
+                <div class="text-center">
+                    <div class=" w-16 h-16 mx-auto rounded-full mb-2 flex items-center justify-center">
+                        <img src="rowling.png" class="h-16">
+                    </div>
+                    <h3 class="font-semibold">J.K. Rowling</h3>
+                </div>
+                <div class="text-center">
+                    <div class=" w-16 h-16 mx-auto rounded-full mb-2 flex items-center justify-center">
+                        <img src="mendes.png" class="h-16">
+                    </div>
+                    <h3 class="font-semibold">Shawn Mendes</h3>
+                </div>
+            </div>
+        </section>
+        </div>
+
+        <!-- Footer -->
+       <footer class=" w-screen h-auto pl-4 pr-4 pt-2  bg-white">
+    <p class="text-2xl sm:text-3xl text-black text-center poetsen-one-regular mt-4">ERWAN PERSONAL WEBSITE</p>
+    <a href="about.html"><p class="text-black flex gap-2 font-light mt-4 cursor-pointer"><img class="h-7 w-7" src="user.png">About Me</p></a>
+    <p id="footer" class="text-black font-semibold mt-5 mb-1">Contact Me On</p>
+    <div class="flex gap-4 ">
+    <div class="space-y-2">
+    <a href="https://www.instagram.com/erwann.?igsh=Y3R4dXc0dzNrempk"><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="ig.png">erwann_7</p></a>
+    <a><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="fb.png">Stephen Curry</p></a>
+    </div>
+    <div class="space-y-2">
+    <a><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="mail.png">erwan11@gmail.com</p></a>
+    <a><p class="text-black font-thin flex gap-2 cursor-pointer"><img class="h-7 w-7" src="wa,png">+628111111</p></a>
+    </div>
+    </div>
+    <p class="text-black font-semibold mt-2">Operation Time</p>
+<p class="text-black font-thin flex gap-2 mt-1"><img class="h-7 w-7" src="jam.png">Everyday</p>
+    <p class="text-black font-semibold">Location</p>
+    <p class=" font-thin mt-1 flex gap-2 items-center cursor-pointer text-sm sm:text-base md:text-lg lg:text-lg text-justify text-black"><img class="h-7 w-7" src="lokasi.png">Dihatimu</p>
+    <p class="text-center mt-8 pb-8 poetsen-one-regular">JUST FOR PRACTICE AND FUN</p>
+</footer>
+    
+</body>
+</html>
